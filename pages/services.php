@@ -24,6 +24,7 @@ if (is_file($servicesPath)) {
     <link rel="stylesheet" href="assets/css/services.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body>
 
@@ -202,5 +203,6 @@ if (is_file($servicesPath)) {
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/services.js"></script>
+<script src="chat/whatsapp.js"></script>
 </body>
 </html>

@@ -39,10 +39,12 @@ body {
 .renew-team {
     position: relative;
     z-index: 2;
+    width: 100%;
     max-width: 1180px;
     margin: 0 auto;
-    padding-left: 28px;
-    padding-right: 28px;
+    padding-left: clamp(16px, 4vw, 44px);
+    padding-right: clamp(16px, 4vw, 44px);
+    box-sizing: border-box;
 }
 
 .renew-hero {
@@ -279,7 +281,8 @@ body {
     max-width: 940px;
     min-height: 0;
     margin-top: 0;
-    padding: 28px;
+    padding-top: 28px;
+    padding-bottom: 28px;
     border: 1px solid var(--page-border);
     border-radius: 8px;
     background: rgba(14, 20, 17, 0.88);
@@ -949,18 +952,6 @@ body {
         padding-bottom: 72px;
     }
 
-    .renew-hero,
-    .renew-service-band,
-    .renew-story,
-    .renew-values,
-    .renew-garden,
-    .renew-proof,
-    .renew-cred,
-    .renew-team {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
     .renew-hero {
         min-height: auto;
         padding-top: 8px;
@@ -1200,18 +1191,6 @@ body {
 }
 
 @media (max-width: 390px) {
-    .renew-hero,
-    .renew-service-band,
-    .renew-story,
-    .renew-values,
-    .renew-garden,
-    .renew-proof,
-    .renew-cred,
-    .renew-team {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
     .renew-hero h1 {
         font-size: 29px;
     }

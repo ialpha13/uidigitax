@@ -16,6 +16,7 @@ $status = $_GET['status'] ?? '';
     <link rel="stylesheet" href="assets/css/contact.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body class="contact-page-body">
 <?php include __DIR__ . '/../includes/navbar.php'; ?>
@@ -138,16 +139,31 @@ $status = $_GET['status'] ?? '';
                 </form>
             </article>
 
-            <article class="contact-advisor" data-reveal-card data-tilt-card>
-                <div class="contact-advisor__head">
-                    <div class="contact-advisor__avatar" aria-hidden="true">U</div>
-                    <div>
-                        <h2>UIDigitax</h2>
-                        <span>Digital Growth Team</span>
+            <article class="wa-inline-card" data-reveal-card>
+                <div class="wa-inline-card__header">
+                    <div class="wa-inline-card__avatar" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 11.9A8 8 0 0 1 8.3 19L4 20l1.1-4.2A8 8 0 1 1 20 11.9Zm-8-6.2a6.2 6.2 0 0 0-5.3 9.3l.3.5-.7 2.5 2.6-.7.5.3A6.2 6.2 0 1 0 12 5.7Zm3.7 7.9c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1l-.4.5c-.1.1-.3.2-.5.1-.2-.1-.8-.3-1.5-1-.6-.6-1-1.4-1.1-1.6-.1-.2 0-.3.1-.4l.3-.4.2-.3a.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.7-.1-.4-.3-.3-.5-.3h-.4a.8.8 0 0 0-.6.3c-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.4.1.2 1.6 2.5 4 3.4 2.3.9 2.3.6 2.7.6.4-.1 1.2-.5 1.4-.9.2-.4.2-.8.2-.9 0-.1-.2-.2-.4-.3Z"/></svg>
+                    </div>
+                    <div class="wa-inline-card__meta">
+                        <p class="wa-inline-card__name">UIDigitax</p>
+                        <span class="wa-inline-card__status">
+                            <span class="wa-inline-card__status-dot" aria-hidden="true"></span>
+                            Typically replies instantly
+                        </span>
                     </div>
                 </div>
-                <p>"Share the real goal behind the request. We will help turn it into a cleaner direction, sharper scope, and practical next step."</p>
-                <a href="pages/about.php">Meet the team</a>
+
+                <div class="wa-inline-card__body">
+                    <div class="wa-inline-card__bubble">
+                        <p>Chat with us on WhatsApp — share your goal and we'll help turn it into a clear, actionable direction.</p>
+                        <span class="wa-inline-card__bubble-time">Just now</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/923169396919?text=<?php echo urlencode('Hi! I found you on your website and would like to know more.'); ?>" class="wa-inline-card__cta" target="_blank" rel="noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 11.9A8 8 0 0 1 8.3 19L4 20l1.1-4.2A8 8 0 1 1 20 11.9Zm-8-6.2a6.2 6.2 0 0 0-5.3 9.3l.3.5-.7 2.5 2.6-.7.5.3A6.2 6.2 0 1 0 12 5.7Zm3.7 7.9c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1l-.4.5c-.1.1-.3.2-.5.1-.2-.1-.8-.3-1.5-1-.6-.6-1-1.4-1.1-1.6-.1-.2 0-.3.1-.4l.3-.4.2-.3a.4.4 0 0 0 0-.4c-.1-.1-.5-1.3-.7-1.7-.1-.4-.3-.3-.5-.3h-.4a.8.8 0 0 0-.6.3c-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.4.1.2 1.6 2.5 4 3.4 2.3.9 2.3.6 2.7.6.4-.1 1.2-.5 1.4-.9.2-.4.2-.8.2-.9 0-.1-.2-.2-.4-.3Z"/></svg>
+                    Start a new chat
+                </a>
             </article>
         </section>
 
@@ -202,5 +218,6 @@ $status = $_GET['status'] ?? '';
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/contact.js"></script>
+<script src="chat/whatsapp.js"></script>
 </body>
 </html>

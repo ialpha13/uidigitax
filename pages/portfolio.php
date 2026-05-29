@@ -38,6 +38,7 @@ foreach ($services as $service) {
     <link rel="stylesheet" href="assets/css/portfolio.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body class="portfolio-page-body">
 <?php include __DIR__ . '/../includes/navbar.php'; ?>
@@ -169,5 +170,6 @@ foreach ($services as $service) {
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/portfolio.js"></script>
+<script src="chat/whatsapp.js"></script>
 </body>
 </html>

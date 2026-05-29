@@ -15,6 +15,7 @@ $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
     <link rel="stylesheet" href="assets/css/about.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body>
 <?php include __DIR__ . '/../includes/navbar.php'; ?>
@@ -241,5 +242,6 @@ $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/about.js"></script>
+<script src="chat/whatsapp.js"></script>
 </body>
 </html>

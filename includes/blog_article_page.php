@@ -94,6 +94,7 @@ if ($post === null) {
     <?php endif; ?>
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body>
 <?php include dirname(__DIR__) . '/includes/navbar.php'; ?>
@@ -232,6 +233,7 @@ if ($post === null) {
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/blogs/base.js"></script>
+<script src="chat/whatsapp.js"></script>
 <?php if ($blogJs !== ''): ?>
     <script src="<?php echo htmlspecialchars($blogJs); ?>"></script>
 <?php endif; ?>

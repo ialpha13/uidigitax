@@ -1,3 +1,5 @@
+<?php include __DIR__ . '/../chat/whatsapp.php'; ?>
+
 <footer class="site-footer" id="contact">
     <div class="site-footer__panel">
         <div class="site-footer__main">

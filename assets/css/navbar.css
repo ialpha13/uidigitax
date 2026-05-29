@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 10px 24px;
+    padding: 10px clamp(14px, 3vw, 28px);
     background: transparent;
     transform: translateY(0);
     transition: padding 0.3s ease, transform 0.3s ease;
@@ -28,7 +28,10 @@
 .agro-nav::before {
     content: "";
     position: absolute;
-    inset: 6px 14px 6px;
+    top: 6px;
+    bottom: 6px;
+    left: clamp(8px, 2vw, 18px);
+    right: clamp(8px, 2vw, 18px);
     background: rgba(7, 10, 8, 0.44);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -42,7 +45,7 @@
 }
 
 .agro-nav.agro-nav--scrolled {
-    padding: 10px 24px;
+    padding: 10px clamp(14px, 3vw, 28px);
 }
 
 .agro-nav.agro-nav--scrolled::before {
@@ -318,18 +321,6 @@
 
 /* ---------- Responsive: tablet (≤900px, >768px) ---------- */
 @media (max-width: 900px) and (min-width: 769px) {
-    .agro-nav {
-        padding: 10px 18px;
-    }
-
-    .agro-nav.agro-nav--scrolled {
-        padding: 10px 18px;
-    }
-
-    .agro-nav__inner {
-        padding: 6px 12px;
-    }
-
     .agro-nav__tab {
         padding: 7px 14px;
         font-size: 0.82rem;
@@ -338,16 +329,7 @@
 
 /* ---------- Responsive: mobile (≤768px) ---------- */
 @media (max-width: 768px) {
-    .agro-nav {
-        padding: 8px 16px;
-    }
-
-    .agro-nav.agro-nav--scrolled {
-        padding: 8px 16px;
-    }
-
     .agro-nav::before {
-        inset: 6px 10px 6px;
         border-radius: 36px;
         opacity: 1;
         transform: translateY(0);
@@ -370,10 +352,6 @@
 
     .agro-nav__logo-text {
         font-size: 0.95rem;
-    }
-
-    .agro-nav__inner {
-        padding: 10px 14px;
     }
 }
 

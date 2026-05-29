@@ -102,6 +102,7 @@ $media = count($media) ? $media : $fallbackMedia;
     <link rel="stylesheet" href="assets/css/portfolios/portfolio-story.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body>
 <?php include dirname(__DIR__) . '/includes/navbar.php'; ?>
@@ -211,5 +212,6 @@ $media = count($media) ? $media : $fallbackMedia;
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/portfolios/portfolio-story.js"></script>
+<script src="chat/whatsapp.js"></script>
 </body>
 </html>
