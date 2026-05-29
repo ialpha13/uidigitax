@@ -38,7 +38,7 @@ $nav_tabs = [
         </div>
 
         <div class="agro-nav__actions">
-            <button class="agro-nav__settings" id="settingsBtn" aria-label="Settings">
+            <a href="pages/contact.php" class="agro-nav__settings" id="settingsBtn" aria-label="Contact page">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
                     <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
                     <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33
@@ -50,11 +50,11 @@ $nav_tabs = [
                              a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
                           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            </a>
 
-            <button class="agro-nav__avatar" id="avatarBtn" aria-label="User profile">
+            <a href="portfolios/web-development.php" class="agro-nav__avatar" id="avatarBtn" aria-label="Web development portfolio">
                 <img src="assets/images/hero.png" alt="User Avatar" class="agro-nav__avatar-img" />
-            </button>
+            </a>
 
             <button class="agro-nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
                 <span></span>
@@ -78,7 +78,7 @@ $nav_tabs = [
             <?php endforeach; ?>
         </ul>
         <div class="agro-nav__mobile-actions">
-            <button class="agro-nav__settings" aria-label="Settings">
+            <a href="pages/contact.php" class="agro-nav__settings" aria-label="Contact page">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                     <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
                     <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33
@@ -90,10 +90,10 @@ $nav_tabs = [
                              a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
                           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
-            <button class="agro-nav__avatar" aria-label="User profile">
+            </a>
+            <a href="portfolios/web-development.php" class="agro-nav__avatar" aria-label="Web development portfolio">
                 <img src="assets/images/hero.png" alt="User Avatar" class="agro-nav__avatar-img" />
-            </button>
+            </a>
         </div>
     </div>
 

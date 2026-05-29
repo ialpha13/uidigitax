@@ -152,7 +152,6 @@ $featuredBuild = [
                     </div>
                     <div class="wd-browser__screen" id="wdPreviewImage" style="background-image: linear-gradient(180deg, rgba(8,10,8,0.01), rgba(8,10,8,0.48)), url('<?php echo htmlspecialchars($activeProject['image']); ?>');">
                         <video class="wd-card-video<?php echo !empty($activeProject['video_preview']) ? '' : ' is-hidden'; ?>" id="wdPreviewVideo" src="<?php echo htmlspecialchars($activeProject['video_preview'] ?? ''); ?>" muted loop playsinline autoplay preload="metadata"></video>
-                        <button class="wd-play" type="button" id="wdPreviewPlay" data-wd-video="<?php echo htmlspecialchars($activeProject['video_preview'] ?? ''); ?>" aria-label="Play <?php echo htmlspecialchars($activeProject['video']); ?>"></button>
                     </div>
                 </div>
                 <div class="wd-preview-copy">
@@ -187,7 +186,6 @@ $featuredBuild = [
                         <?php if (!empty($project['video_preview'])): ?>
                             <video class="wd-card-video" src="<?php echo htmlspecialchars($project['video_preview']); ?>" muted loop playsinline autoplay preload="metadata"></video>
                         <?php endif; ?>
-                        <button class="wd-play" type="button" data-wd-video="<?php echo htmlspecialchars($project['video_preview'] ?? ''); ?>" aria-label="Play <?php echo htmlspecialchars($project['video']); ?>"></button>
                     </div>
                     <div>
                         <span><?php echo htmlspecialchars($project['type']); ?></span>

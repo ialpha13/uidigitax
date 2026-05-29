@@ -30,7 +30,6 @@
     const previewName = document.getElementById('wdPreviewName');
     const previewSummary = document.getElementById('wdPreviewSummary');
     const previewTags = document.getElementById('wdPreviewTags');
-    const previewPlay = document.getElementById('wdPreviewPlay');
     const previewVisit = document.getElementById('wdPreviewVisit');
     const previewVideo = document.getElementById('wdPreviewVideo');
 
@@ -55,8 +54,6 @@
             if (previewType) previewType.textContent = data.type || '';
             if (previewName) previewName.textContent = data.name || '';
             if (previewSummary) previewSummary.textContent = data.summary || '';
-            if (previewPlay) previewPlay.setAttribute('aria-label', 'Play ' + (data.video || 'website preview'));
-            if (previewPlay) previewPlay.setAttribute('data-wd-video', data.video_preview || '');
             if (previewVisit && data.live_url) previewVisit.setAttribute('href', data.live_url);
             if (previewVideo) {
                 if (data.video_preview) {
@@ -80,15 +77,6 @@
                     previewTags.appendChild(node);
                 });
             }
-        });
-    });
-
-    const playButtons = document.querySelectorAll('.wd-play');
-    playButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const videoUrl = button.getAttribute('data-wd-video');
-            if (!videoUrl) return;
-            window.open(videoUrl, '_blank', 'noopener,noreferrer');
         });
     });
 }());

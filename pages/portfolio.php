@@ -11,19 +11,64 @@ if (is_file($servicesPath)) {
 }
 
 $galleryItems = [];
-foreach ($services as $service) {
-    foreach (($service['media'] ?? []) as $mediaIndex => $media) {
+$portfolioMediaDir = __DIR__ . '/../assets/images/gallery';
+$allowedImageExt = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+$allowedVideoExt = ['mp4', 'webm', 'ogg', 'mov'];
+
+if (is_dir($portfolioMediaDir)) {
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($portfolioMediaDir, FilesystemIterator::SKIP_DOTS)
+    );
+
+    foreach ($iterator as $fileInfo) {
+        if (!$fileInfo->isFile()) {
+            continue;
+        }
+
+        $ext = strtolower($fileInfo->getExtension());
+        $isImage = in_array($ext, $allowedImageExt, true);
+        $isVideo = in_array($ext, $allowedVideoExt, true);
+
+        if (!$isImage && !$isVideo) {
+            continue;
+        }
+
+        $absolutePath = $fileInfo->getPathname();
+        $relativePath = str_replace('\\', '/', substr($absolutePath, strlen(__DIR__ . '/../')));
+        $folderName = basename(dirname($absolutePath));
+        $rawName = pathinfo($fileInfo->getFilename(), PATHINFO_FILENAME);
+        $prettyName = ucwords(str_replace(['-', '_'], ' ', $rawName));
+
         $galleryItems[] = [
-            'service_title' => $service['title'] ?? 'Service',
-            'service_slug' => $service['slug'] ?? '',
-            'type' => $media['type'] ?? 'screenshot',
-            'title' => $media['title'] ?? ($service['title'] ?? 'Portfolio Media'),
-            'caption' => $media['caption'] ?? ($service['description'] ?? ''),
-            'asset' => $media['asset'] ?? 'assets/images/hero.png',
-            'size' => ($mediaIndex % 3 === 0) ? 'large' : (($mediaIndex % 3 === 1) ? 'wide' : 'standard'),
+            'service_title' => ucwords(str_replace(['-', '_'], ' ', $folderName)),
+            'service_slug' => '',
+            'type' => $isVideo ? 'video' : 'screenshot',
+            'title' => $prettyName,
+            'caption' => '',
+            'asset' => $relativePath,
         ];
     }
 }
+
+if (empty($galleryItems)) {
+    foreach ($services as $service) {
+        foreach (($service['media'] ?? []) as $media) {
+            $galleryItems[] = [
+                'service_title' => $service['title'] ?? 'Service',
+                'service_slug' => $service['slug'] ?? '',
+                'type' => $media['type'] ?? 'screenshot',
+                'title' => $media['title'] ?? ($service['title'] ?? 'Portfolio Media'),
+                'caption' => $media['caption'] ?? ($service['description'] ?? ''),
+                'asset' => $media['asset'] ?? 'assets/images/hero.png',
+            ];
+        }
+    }
+}
+
+foreach ($galleryItems as $index => &$item) {
+    $item['size'] = ($index % 3 === 0) ? 'large' : (($index % 3 === 1) ? 'wide' : 'standard');
+}
+unset($item);
 ?>
 <!DOCTYPE html>
 <html lang="en">
