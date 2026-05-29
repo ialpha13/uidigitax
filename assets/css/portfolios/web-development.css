@@ -170,7 +170,10 @@ body {
     position: relative;
     min-height: 410px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(6,8,7,0.92);
+    overflow: hidden;
 }
 
 .wd-browser--hero {
@@ -194,7 +197,9 @@ body {
     height: 100%;
     border-radius: 6px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(6,8,7,0.92);
 }
 
 .wd-phone--hero {
@@ -404,7 +409,29 @@ body {
     position: relative;
     min-height: 250px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(6,8,7,0.92);
+    overflow: hidden;
+}
+
+.wd-card-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+    background: rgba(6,8,7,0.92);
+    z-index: 1;
+}
+
+.wd-card-video.is-hidden {
+    display: none;
+}
+
+.wd-play {
+    z-index: 2;
 }
 
 .wd-video-card > div:last-child {
@@ -441,7 +468,9 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(6,8,7,0.92);
 }
 
 .wd-device-card__phone {
@@ -453,7 +482,9 @@ body {
     border: 5px solid rgba(6,8,7,0.92);
     border-radius: 8px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(6,8,7,0.92);
     box-shadow: 0 12px 28px rgba(0,0,0,0.28);
 }
 

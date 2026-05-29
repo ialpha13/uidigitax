@@ -8,8 +8,9 @@ $projects = [
         'type' => 'PHP Product & Category Website',
         'url' => 'pakwestinternational.com',
         'live_url' => 'https://pakwestinternational.com',
-        'image' => 'assets/images/hero.png',
-        'mobile' => 'assets/images/hero2.png',
+        'image' => 'assets/images/portfolios/webdevelopmentportfolio/pakwestinternational/pakwestinternationaldesktoppreview.png',
+        'mobile' => 'assets/images/portfolios/webdevelopmentportfolio/pakwestinternational/pakwestinternationalphonepreview.png',
+        'video_preview' => 'assets/images/portfolios/webdevelopmentportfolio/pakwestinternational/pakwestinternationalvideopreview.mp4',
         'summary' => 'A modular PHP website for product and category presentation, using reusable components and JSON-driven content across key business pages.',
         'tags' => ['PHP', 'JSON-driven', 'Responsive'],
         'video' => 'Live homepage walkthrough',
@@ -19,8 +20,9 @@ $projects = [
         'type' => 'Grant Support & Resources Website',
         'url' => 'thegrantship.com',
         'live_url' => 'https://thegrantship.com',
-        'image' => 'assets/images/hero2.png',
-        'mobile' => 'assets/images/hero3.jpeg',
+        'image' => 'assets/images/portfolios/webdevelopmentportfolio/thegrantship/thegrantshipdesktoppreview.png',
+        'mobile' => 'assets/images/portfolios/webdevelopmentportfolio/thegrantship/thegrantshipphonepreview.png',
+        'video_preview' => 'assets/images/portfolios/webdevelopmentportfolio/thegrantship/thegrantshipvideopreview.mp4',
         'summary' => 'A complete grant-focused website with service pages, resources, blog, downloads, and contact/newsletter workflows for inquiry capture.',
         'tags' => ['Grant Services', 'Resources', 'Lead Capture'],
         'video' => 'Live page flow preview',
@@ -30,8 +32,9 @@ $projects = [
         'type' => 'PHP Website Scaffold',
         'url' => 'thesaltship.com',
         'live_url' => 'https://thesaltship.com',
-        'image' => 'assets/images/hero3.jpeg',
-        'mobile' => 'assets/images/hero.png',
+        'image' => 'assets/images/portfolios/webdevelopmentportfolio/thesaltship/thesaltshipdesktoppreview.png',
+        'mobile' => 'assets/images/portfolios/webdevelopmentportfolio/thesaltship/thesaltshipphonepreview.png',
+        'video_preview' => 'assets/images/portfolios/webdevelopmentportfolio/thesaltship/thesaltshipvideopreview.mp4',
         'summary' => 'A structured PHP website foundation with routed pages, reusable includes/components, and data-driven navigation, products, and categories.',
         'tags' => ['PHP', 'Component-based', 'Data-driven'],
         'video' => 'Live reading journey preview',
@@ -41,8 +44,9 @@ $projects = [
         'type' => 'Cybersecurity Blog & Portfolio',
         'url' => 'theblogship.com',
         'live_url' => 'https://theblogship.com',
-        'image' => 'assets/images/blogs/DigitalBrandMoment.png',
-        'mobile' => 'assets/images/hero2.png',
+        'image' => 'assets/images/portfolios/webdevelopmentportfolio/theblogship/theblogshipdesktoppreview.png',
+        'mobile' => 'assets/images/portfolios/webdevelopmentportfolio/theblogship/theblogshipphonepreview.png',
+        'video_preview' => 'assets/images/portfolios/webdevelopmentportfolio/theblogship/theblogshipvideopreview.mp4',
         'summary' => 'A personal blog and portfolio platform focused on networking, routing protocols, and cybersecurity content with category-driven article structure.',
         'tags' => ['Cybersecurity', 'Blog', 'Portfolio'],
         'video' => 'Live editorial preview',
@@ -50,6 +54,13 @@ $projects = [
 ];
 
 $activeProject = $projects[0];
+$featuredBuild = [
+    'name' => $activeProject['name'],
+    'url' => $activeProject['url'],
+    'summary' => $activeProject['summary'],
+    'image' => 'assets/images/portfolios/webdevelopmentportfolio/featuredbuild/featuredbuilddesktoppreview.png',
+    'mobile' => 'assets/images/portfolios/webdevelopmentportfolio/featuredbuild/featuredbuildphonepreview.png',
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,21 +109,20 @@ $activeProject = $projects[0];
     <section class="wd-featured" data-wd-reveal>
         <div class="wd-section-heading">
             <span class="wd-pill">Featured Build</span>
-            <h2><?php echo htmlspecialchars($activeProject['name']); ?></h2>
-            <p><?php echo htmlspecialchars($activeProject['summary']); ?></p>
+            <h2><?php echo htmlspecialchars($featuredBuild['name']); ?></h2>
+            <p><?php echo htmlspecialchars($featuredBuild['summary']); ?></p>
         </div>
         <div class="wd-featured__stage">
             <div class="wd-browser">
                 <div class="wd-browser__bar">
                     <span></span><span></span><span></span>
-                    <strong><?php echo htmlspecialchars($activeProject['url']); ?></strong>
+                    <strong><?php echo htmlspecialchars($featuredBuild['url']); ?></strong>
                 </div>
-                <div class="wd-browser__screen" style="background-image: linear-gradient(180deg, rgba(8,10,8,0.01), rgba(8,10,8,0.48)), url('<?php echo htmlspecialchars($activeProject['image']); ?>');">
-                    <button class="wd-play" type="button" aria-label="Play <?php echo htmlspecialchars($activeProject['video']); ?>"></button>
+                <div class="wd-browser__screen" style="background-image: linear-gradient(180deg, rgba(8,10,8,0.01), rgba(8,10,8,0.48)), url('<?php echo htmlspecialchars($featuredBuild['image']); ?>');">
                 </div>
             </div>
             <div class="wd-phone">
-                <div style="background-image: linear-gradient(180deg, rgba(8,10,8,0.02), rgba(8,10,8,0.5)), url('<?php echo htmlspecialchars($activeProject['mobile']); ?>');"></div>
+                <div style="background-image: linear-gradient(180deg, rgba(8,10,8,0.02), rgba(8,10,8,0.5)), url('<?php echo htmlspecialchars($featuredBuild['mobile']); ?>');"></div>
             </div>
         </div>
     </section>
@@ -141,7 +151,8 @@ $activeProject = $projects[0];
                         <strong id="wdPreviewUrl"><?php echo htmlspecialchars($activeProject['url']); ?></strong>
                     </div>
                     <div class="wd-browser__screen" id="wdPreviewImage" style="background-image: linear-gradient(180deg, rgba(8,10,8,0.01), rgba(8,10,8,0.48)), url('<?php echo htmlspecialchars($activeProject['image']); ?>');">
-                        <button class="wd-play" type="button" id="wdPreviewPlay" aria-label="Play <?php echo htmlspecialchars($activeProject['video']); ?>"></button>
+                        <video class="wd-card-video<?php echo !empty($activeProject['video_preview']) ? '' : ' is-hidden'; ?>" id="wdPreviewVideo" src="<?php echo htmlspecialchars($activeProject['video_preview'] ?? ''); ?>" muted loop playsinline autoplay preload="metadata"></video>
+                        <button class="wd-play" type="button" id="wdPreviewPlay" data-wd-video="<?php echo htmlspecialchars($activeProject['video_preview'] ?? ''); ?>" aria-label="Play <?php echo htmlspecialchars($activeProject['video']); ?>"></button>
                     </div>
                 </div>
                 <div class="wd-preview-copy">
@@ -173,7 +184,10 @@ $activeProject = $projects[0];
             <?php foreach (array_slice($projects, 0, 3) as $project): ?>
                 <article class="wd-video-card" data-wd-reveal>
                     <div class="wd-video-card__visual" style="background-image: linear-gradient(180deg, rgba(8,10,8,0.02), rgba(8,10,8,0.68)), url('<?php echo htmlspecialchars($project['image']); ?>');">
-                        <button class="wd-play" type="button" aria-label="Play <?php echo htmlspecialchars($project['video']); ?>"></button>
+                        <?php if (!empty($project['video_preview'])): ?>
+                            <video class="wd-card-video" src="<?php echo htmlspecialchars($project['video_preview']); ?>" muted loop playsinline autoplay preload="metadata"></video>
+                        <?php endif; ?>
+                        <button class="wd-play" type="button" data-wd-video="<?php echo htmlspecialchars($project['video_preview'] ?? ''); ?>" aria-label="Play <?php echo htmlspecialchars($project['video']); ?>"></button>
                     </div>
                     <div>
                         <span><?php echo htmlspecialchars($project['type']); ?></span>
