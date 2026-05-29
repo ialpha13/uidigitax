@@ -4,54 +4,48 @@ $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 
 $projects = [
     [
-        'name' => 'Avenor Studio',
-        'type' => 'Creative Agency Website',
-        'url' => 'avenor.studio',
+        'name' => 'Pak West International',
+        'type' => 'PHP Product & Category Website',
+        'url' => 'pakwestinternational.com',
+        'live_url' => 'https://pakwestinternational.com',
         'image' => 'assets/images/hero.png',
         'mobile' => 'assets/images/hero2.png',
-        'summary' => 'A cinematic agency site with a strong first screen, polished sections, and clear lead paths.',
-        'tags' => ['Brand Site', 'Responsive', 'Lead Flow'],
-        'video' => 'Homepage walkthrough',
+        'summary' => 'A modular PHP website for product and category presentation, using reusable components and JSON-driven content across key business pages.',
+        'tags' => ['PHP', 'JSON-driven', 'Responsive'],
+        'video' => 'Live homepage walkthrough',
     ],
     [
-        'name' => 'Growthline',
-        'type' => 'SaaS Landing Page',
-        'url' => 'growthline.app',
+        'name' => 'The Grantship',
+        'type' => 'Grant Support & Resources Website',
+        'url' => 'thegrantship.com',
+        'live_url' => 'https://thegrantship.com',
         'image' => 'assets/images/hero2.png',
         'mobile' => 'assets/images/hero3.jpeg',
-        'summary' => 'A conversion-focused landing page designed around product clarity, proof, and sign-up intent.',
-        'tags' => ['SaaS', 'Landing Page', 'Conversion'],
-        'video' => 'Product scroll preview',
+        'summary' => 'A complete grant-focused website with service pages, resources, blog, downloads, and contact/newsletter workflows for inquiry capture.',
+        'tags' => ['Grant Services', 'Resources', 'Lead Capture'],
+        'video' => 'Live page flow preview',
     ],
     [
-        'name' => 'Northvale',
-        'type' => 'Corporate Website',
-        'url' => 'northvale.co',
+        'name' => 'The Saltship',
+        'type' => 'PHP Website Scaffold',
+        'url' => 'thesaltship.com',
+        'live_url' => 'https://thesaltship.com',
         'image' => 'assets/images/hero3.jpeg',
         'mobile' => 'assets/images/hero.png',
-        'summary' => 'A refined business website with structured messaging, service clarity, and trust-first presentation.',
-        'tags' => ['Corporate', 'CMS Ready', 'SEO Base'],
-        'video' => 'Service journey preview',
+        'summary' => 'A structured PHP website foundation with routed pages, reusable includes/components, and data-driven navigation, products, and categories.',
+        'tags' => ['PHP', 'Component-based', 'Data-driven'],
+        'video' => 'Live reading journey preview',
     ],
     [
-        'name' => 'Luma Commerce',
-        'type' => 'Ecommerce Experience',
-        'url' => 'lumacommerce.store',
+        'name' => 'The Blogship',
+        'type' => 'Cybersecurity Blog & Portfolio',
+        'url' => 'theblogship.com',
+        'live_url' => 'https://theblogship.com',
         'image' => 'assets/images/blogs/DigitalBrandMoment.png',
         'mobile' => 'assets/images/hero2.png',
-        'summary' => 'A product-led storefront concept with visual merchandising, mobile browsing, and checkout focus.',
-        'tags' => ['Ecommerce', 'Product UI', 'Mobile'],
-        'video' => 'Shop flow walkthrough',
-    ],
-    [
-        'name' => 'SignalPoint',
-        'type' => 'Marketing Website',
-        'url' => 'signalpoint.digital',
-        'image' => 'assets/images/logo2.png',
-        'mobile' => 'assets/images/hero3.jpeg',
-        'summary' => 'A campaign-ready marketing site built to explain offers quickly and guide users toward action.',
-        'tags' => ['Marketing', 'Campaigns', 'Fast UI'],
-        'video' => 'Campaign page preview',
+        'summary' => 'A personal blog and portfolio platform focused on networking, routing protocols, and cybersecurity content with category-driven article structure.',
+        'tags' => ['Cybersecurity', 'Blog', 'Portfolio'],
+        'video' => 'Live editorial preview',
     ],
 ];
 
@@ -70,6 +64,7 @@ $activeProject = $projects[0];
     <link rel="stylesheet" href="assets/css/portfolios/web-development.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="chat/whatsapp.css" />
 </head>
 <body>
 <?php include dirname(__DIR__) . '/includes/navbar.php'; ?>
@@ -78,8 +73,8 @@ $activeProject = $projects[0];
     <section class="wd-hero" data-wd-reveal>
         <div class="wd-hero__copy">
             <span class="wd-pill">Web Development Portfolio</span>
-            <h1>Websites built to look sharp, load fast, and convert.</h1>
-            <p>Explore selected website concepts, responsive previews, and walkthrough-style showcases crafted for brands that need a stronger digital presence.</p>
+            <h1>Live websites built for clarity, speed, and growth.</h1>
+            <p>Explore real client websites with responsive previews, conversion-focused structure, and clean modern presentation.</p>
             <div class="wd-actions">
                 <a href="pages/contact.php" class="wd-btn wd-btn--primary">Start a Website Project</a>
                 <a href="#websiteBrowser" class="wd-btn wd-btn--ghost">Explore Websites</a>
@@ -125,7 +120,7 @@ $activeProject = $projects[0];
     <section class="wd-browser-section" id="websiteBrowser" data-wd-reveal>
         <div class="wd-section-heading">
             <span class="wd-pill">Project Browser</span>
-            <h2>Five website showcases in one interactive preview.</h2>
+            <h2>Four live websites in one interactive preview.</h2>
         </div>
 
         <div class="wd-browser-layout">
@@ -157,6 +152,9 @@ $activeProject = $projects[0];
                         <?php foreach ($activeProject['tags'] as $tag): ?>
                             <span><?php echo htmlspecialchars($tag); ?></span>
                         <?php endforeach; ?>
+                    </div>
+                    <div class="wd-actions">
+                        <a id="wdPreviewVisit" href="<?php echo htmlspecialchars($activeProject['live_url']); ?>" class="wd-btn wd-btn--primary" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
                     </div>
                 </div>
                 <div class="wd-phone wd-phone--floating">
@@ -237,5 +235,6 @@ $activeProject = $projects[0];
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/footer.js"></script>
 <script src="assets/js/portfolios/web-development.js"></script>
+<script src="chat/whatsapp.js"></script>
 </body>
 </html>
