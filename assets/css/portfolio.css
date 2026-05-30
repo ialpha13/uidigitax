@@ -271,8 +271,8 @@ body {
     width: max-content;
     min-height: 100%;
     align-items: stretch;
-    padding-left: clamp(12px, 2vw, 24px);
-    padding-right: clamp(12px, 2vw, 24px);
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .portfolio-hero__track--left .portfolio-hero__lane {

@@ -69,6 +69,9 @@ foreach ($galleryItems as $index => &$item) {
     $item['size'] = ($index % 3 === 0) ? 'large' : (($index % 3 === 1) ? 'wide' : 'standard');
 }
 unset($item);
+
+$heroLoopItems = array_merge($galleryItems, $galleryItems, $galleryItems, $galleryItems);
+$heroLoopItemsReversed = array_reverse($heroLoopItems);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +101,7 @@ unset($item);
             </div>
             <div class="portfolio-hero__track portfolio-hero__track--left">
                 <div class="portfolio-hero__lane">
-                    <?php foreach (array_merge($galleryItems, $galleryItems) as $item): ?>
+                    <?php foreach ($heroLoopItems as $item): ?>
                         <article class="hero-media-tile hero-media-tile--<?php echo htmlspecialchars($item['size']); ?><?php echo ($item['type'] ?? '') === 'video' ? ' hero-media-tile--video' : ''; ?>">
                             <div class="hero-media-tile__visual" style="background-image:
                                 linear-gradient(180deg, rgba(9, 15, 12, 0.08) 0%, rgba(9, 15, 12, 0.68) 100%),
@@ -119,7 +122,7 @@ unset($item);
 
             <div class="portfolio-hero__track portfolio-hero__track--right">
                 <div class="portfolio-hero__lane">
-                    <?php foreach (array_merge(array_reverse($galleryItems), array_reverse($galleryItems)) as $item): ?>
+                    <?php foreach ($heroLoopItemsReversed as $item): ?>
                         <article class="hero-media-tile hero-media-tile--<?php echo htmlspecialchars($item['size']); ?><?php echo ($item['type'] ?? '') === 'video' ? ' hero-media-tile--video' : ''; ?>">
                             <div class="hero-media-tile__visual" style="background-image:
                                 linear-gradient(180deg, rgba(9, 15, 12, 0.08) 0%, rgba(9, 15, 12, 0.68) 100%),
